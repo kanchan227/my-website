@@ -1,0 +1,12 @@
+mat-card{
+  width:80%;
+  margin-left: 80px ;
+}
+ mat-form-field{
+   width: 80%;
+ }
+.material-icons:hover{
+  color: red;
+  cursor: pointer;
+
+}

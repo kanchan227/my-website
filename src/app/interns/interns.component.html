@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-toolbar> Add Your Post</mat-toolbar>
+  <br/>
+  <mat-form-field>
+    <input type="text" matInput name="User" placeholder="User" required [(ngModel)]="User">
+  </mat-form-field>
+  <br/>
+<mat-form-field>
+  <input type="text" matInput rows="10" name="message" placeholder="message" required [(ngModel)]="message">
+</mat-form-field>
+<br/>
+<button type="submit" mat-raised-button color="accent" (click)="addmessage()" placeholder="send Post"> send Post</button>
+</mat-card>
+
+

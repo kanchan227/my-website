@@ -1,0 +1,80 @@
+<mat-card>
+  <div class="jumbotron">Register</div>
+  <h2>Create your account</h2>
+  <form #userfrom="ngForm" (ngSubmit)=" userfrom.form.valid && show(userfrom)" novalidate >
+    <mat-form-field >
+      <mat-select name="title" placeholder="title" ngModel required #title="ngModel" [(ngModel)]="registors.title" [ngClass]="{'is-inavlid':userfrom.submitted && title.invalid}">
+        <mat-option value="Mr">Mr</mat-option>
+        <mat-option value="Ms">Ms</mat-option>
+        <mat-option value="Mrs">Mrs</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-error *ngIf="userfrom.submitted && title.invalid">
+      <mat-error *ngIf="title.hasError('required')">
+      title is required
+      </mat-error>
+
+    </mat-error>
+
+    <mat-form-field>
+      <input type="text" name="name" matInput placeholder="Name"  [(ngModel)]="registors.name" required #name="ngModel" [ngClass]="{'is-inavlid':userfrom.submitted && name.invalid}">
+    </mat-form-field>
+    <mat-error *ngIf="userfrom.submitted && name.invalid">
+   <mat-error *ngIf="name.hasError('required')">
+     Name is required
+   </mat-error>
+    </mat-error>
+    <br/>
+    <mat-form-field>
+      <input type="email" name="email" matInput placeholder="Email Address" [(ngModel)]="registors.email" required #email="ngModel" [ngClass]="{'is-invalid':userfrom.submitted && email.invalid}">
+    </mat-form-field>
+    <mat-error *ngIf="userfrom.submitted && email.invalid">
+      <mat-error *ngIf="email.hasError('required')">
+        Email is must be required
+      </mat-error>
+      <mat-error *ngIf="email.hasError('email')">
+        Should be in Email format
+      </mat-error>
+
+    </mat-error>
+    <br/>
+    <mat-form-field>
+      <input  matInput name="phone" placeholder="Phone Number" [(ngModel)]="registors.phone" required #phone="ngModel" [ngClass]="{'is-invalid':userfrom.submitted && phone.invalid}">
+    </mat-form-field>
+    <mat-error *ngIf="userfrom.submitted && phone.invalid">
+      <mat-error *ngIf="phone.hasError('required')">
+        Phone Number is must be required
+      </mat-error>
+    </mat-error>
+    <br/>
+    <mat-radio-group name="gender" ngModel required>
+        <mat-radio-button value="m">Male</mat-radio-button>
+        <mat-radio-button style="margin-left: 10px;" value="f">Female</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+    <mat-form-field>
+      <input type="password" name="Password"  matInput placeholder="Password" [(ngModel)]="registors.Password" required #Password="ngModel" [ngClass]="{'is-inavlid':userfrom.submitted && Password.invalid}" >
+    </mat-form-field>
+    <mat-error *ngIf="userfrom.submitted && Password.invalid">
+      <mat-error *ngIf="Password.hasError('required')">
+        Password is must be required
+      </mat-error>
+
+    </mat-error>
+    <br/>
+    <mat-form-field>
+      <input type="password" name="CPassword" matInput placeholder="Confirm Password" [(ngModel)]="registors.CPassword" #CPassword="ngModel" required [ngClass]="{'is-invalid':userfrom.submitted && CPassword.invalid}">
+    </mat-form-field>
+    <mat-error *ngIf="userfrom.submitted && CPassword.invalid">
+      <mat-error *ngIf="CPassword.hasError('required')">
+        Confirm Password is must be required
+      </mat-error>
+
+    </mat-error>
+    <br/>
+    <button name="submit" type="submit" mat-raised-button color="accent" onclick="onReset()">Register</button>
+    <br/>
+
+    <p>Already have an account?</p> <a routerLink="/login" >Login</a>
+  </form>
+  </mat-card>

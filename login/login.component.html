@@ -1,0 +1,45 @@
+<mat-card>
+  <form #loginform="ngForm" (ngSubmit)=" loginform.form.valid && onlogin(loginform)" novalidate >
+    <div class="jumbotron">Login for access the site</div>
+    <br/>
+    <span class="material-icons">perm_identity</span><h2>Sign into Your Account</h2>
+  <mat-form-field>
+  <input type="username"
+  matInput
+  placeholder="username"
+  name="username"
+  [(ngModel)]="Users.username"
+  required
+  #username = "ngModel"
+  [ngClass] = "{'is-inavlid':loginform.submitted && username.invalid}">
+  </mat-form-field>
+  <mat-error *ngIf="loginform.submitted && username.invalid">
+    <mat-error *ngIf = "username.hasError('required')">
+      Username Field is Required
+    </mat-error>
+  </mat-error>
+
+  <br/>
+    <mat-form-field>
+     <input type="password"
+      matInput
+      placeholder="Password"
+      required
+      name="password"
+      ngModel
+      #Password="ngModel"
+      [(ngModel)]="Users.Password"
+      [ngClass]="{'is-inavlid':loginform.submitted && Password.invalid}"
+      >
+  </mat-form-field>
+  <mat-error *ngIf="loginform.submitted && Password.invalid">
+  <mat-error *ngIf="Password.hasError('required')">
+    Password is required
+  </mat-error>
+  </mat-error>
+  <br/>
+  <button type="submit" mat-raised-button color="warn">Login</button>
+  <br><br>
+  <p>Don't have an account?</p> <a routerLink="/registor" >Registor</a>
+  </form>
+  </mat-card>

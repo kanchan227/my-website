@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-toolbar>Add new Users</mat-toolbar>
+  <form (ngsubmit)="onadduser(userfrom)" #userfrom="ngForm">
+    <mat-form-field>
+      <input type="text" matInput placeholder="User" required name="name" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input type="password" matInput placeholder="password" required name="password" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="email" matInput placeholder="email" required name="email" ngModel >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="address" required name="address" ngModel>
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button color="primary"  ngModel >send </button>
+  </form>
+  </mat-card>
+
+
+
+  <br>
+
+  <mat-card>
+  <mat-toolbar>list</mat-toolbar><br>
+  <table class="table">
+    <tr>
+      <th>sr.no</th>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>address</th>
+      <th>Actions</th>
+    </tr>
+
+
+      <tr *ngFor="let Userinf of user; let i = index ">
+        <td>{{i+1}}</td>
+      <td>{{Userinf.name}}</td>
+      <td>{{Userinf.password}}</td>
+      <td>{{Userinf.email}}</td>
+      <td>{{Userinf.address}}</td>
+      <td><span class="material-icons" (click)="edituser(i)" >mode_edit</span> <span style=" margin-left: 40px"class="material-icons" (click)="deleteUser(i)">
+        delete
+        </span></td>
+
+      </tr>
+
+
+  </table>
+
+
+  </mat-card>

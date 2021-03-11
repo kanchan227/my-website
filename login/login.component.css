@@ -1,0 +1,16 @@
+h1{
+  color: cornflowerblue;
+  font-size:xx-large;
+  margin-top: 20px;
+  text-align: center;
+}
+mat-form-field{
+  width: 80%;
+}
+mat-card{
+  margin-left: 40px;
+}
+.jumbotron{
+  font-size: x-large;
+  color: red;
+}

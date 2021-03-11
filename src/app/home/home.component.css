@@ -1,0 +1,24 @@
+.htl{
+ background-color: darkgray;
+  height: 100%;
+  background-size:cover;
+  padding-top: 20px;
+
+}
+
+.head{
+  text-align: center;
+  color:darkred;
+  background-color: darkgray;
+  font-size: 4rem;
+
+}
+p{
+  margin-top: 1.3rem;
+  text-align: center;
+  font-size: medium;
+}
+.body{
+  margin-top:250px;
+  background-color:darkgrey;
+}

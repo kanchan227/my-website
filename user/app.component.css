@@ -1,0 +1,28 @@
+.nav-link{
+  font-family:'Times New Roman', Times, serif;
+  font-size: medium;
+  font-style:normal;
+
+}
+.nav-brand{
+  font-family:'Times New Roman', Times, serif;
+  font-size: medium;
+  font-style:normal ;
+
+}
+
+
+.body{
+  position: absolute,fixed;
+  height: 100vh;
+}
+h1{
+  text-align: center;
+  color: wheat;
+  font-size: 4rem;
+}
+p{
+  margin-top: 1.3rem;
+  text-align: center;
+  font-size: medium;
+}
