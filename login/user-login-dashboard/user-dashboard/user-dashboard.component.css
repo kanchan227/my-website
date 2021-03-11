@@ -1,0 +1,26 @@
+.container {
+  padding-top: 30px;
+}
+button {
+  margin-right: 2rem;
+  background-color: rgb(231, 224, 224);
+}
+mat-toolbar {
+  font-size: 2.5rem;
+  color: rgb(37, 20, 83);
+}
+mat-icon {
+  color: rgb(42, 154, 173);
+}
+.delete {
+  color: white;
+}
+.button {
+  margin-right: 0.5rem;
+  display: inline-block;
+  background: rgb(231, 224, 224);
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+}
