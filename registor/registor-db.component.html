@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-toolbar>
+    List of Users in Firebase
+  </mat-toolbar>
+  <table class="table">
+  <tr>
+    <th>sr.no</th>
+    <th>title</th>
+    <th>name</th>
+    <th>Email</th>
+    <th>phone</th>
+    <th>gender</th>
+    <th>Password</th>
+    <th>Confirm Password</th>
+
+  </tr>
+
+  <tr *ngFor="let user of items ,let i=index">
+    <td>{{i+1}}</td>
+    <td>{{user.payload.doc.data().title}}</td>
+    <td>{{user.payload.doc.data().name}}</td>
+    <td>{{user.payload.doc.data().email}}</td>
+    <td>{{user.payload.doc.data().phone}}</td>
+    <td>{{user.payload.doc.data().gender}}</td>
+    <td>{{user.payload.doc.data().Password}}</td>
+    <td>{{user.payload.doc.data().CPassword}}</td>
+
+  </tr>
+
+
+</table>
+
+
+
+</mat-card>
