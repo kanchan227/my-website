@@ -1,0 +1,11 @@
+<mat-accordion multi="true" *ngIf="Post.length>0">
+  <mat-expansion-panel *ngFor="let Posts of Post">
+    <mat-expansion-panel-header>
+      <p>{{Posts.User}}</p>
+    </mat-expansion-panel-header>
+    <p>{{Posts.message}}</p>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion>
+  <p class="mat-h4 text-info" *ngIf="Post.length<=0">No Post Found</p>
+</mat-accordion>
